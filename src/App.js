@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header/Header";
+import Items from "./components/Items/Items";
+import Background from "./components/UI/Background";
+import ModalOverlay from "./components/UI/ModalOverlay";
+import Summary from "./components/UI/Summary";
+import CartContextProvider from "./store/CartContextProvider";
 
-function App() {
+const App = () => {
+  const [isShowCart, setIsShowCart] = useState(false);
+
+  const showCartHandler = () => {
+    setIsShowCart(true);
+  };
+
+  const closeCartHandler = () => {
+    setIsShowCart(false);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartContextProvider>
+      {isShowCart && <ModalOverlay onClose={closeCartHandler} />}
+      <Header onShowCart={showCartHandler} />
+      <Background />
+      <Summary />
+      <Items />
+    </CartContextProvider>
   );
-}
+};
 
 export default App;

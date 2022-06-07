@@ -1,0 +1,36 @@
+.cart {
+  position: fixed;
+  color: white;
+  padding: 16px;
+  width: 800px;
+  max-width: 95%;
+  background: #222;
+  max-height: 600px;
+  overflow: scroll;
+  border-radius: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cart > h2 {
+  text-align: center;
+}
+
+.cart-items {
+  margin-bottom: 16px;
+}
+
+
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}

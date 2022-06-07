@@ -1,0 +1,11 @@
+.items {
+  color: white;
+  margin: 0 auto;
+  padding: 16px;
+  width: 800px;
+  max-width: 95%;
+  background: #222;
+  max-height: 600px;
+  overflow: scroll;
+  border-radius: 16px;
+}

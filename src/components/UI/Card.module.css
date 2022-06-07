@@ -1,0 +1,7 @@
+.card {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.4);
+}
