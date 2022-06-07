@@ -4,7 +4,7 @@ import CartContext from "../../store/cart_context";
 import styles from "./ItemForm.module.css";
 
 const ItemForm = (props) => {
-  const inputRef = useRef(0);
+  const inputRef = useRef(1);
   const [inValid, setInValid] = useState(false);
 
   const cartContext = useContext(CartContext);
@@ -24,7 +24,7 @@ const ItemForm = (props) => {
 
   return (
     <form className={styles.form} onSubmit={onSubmitHandler}>
-      <input ref={inputRef} type="number" min="1" />
+      <input ref={inputRef} type="number" min="1" defaultValue="1" />
       {inValid && <p>Invalid Amount</p>}
       <button type="submit">+Add</button>
     </form>
